@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia Game</title>
+
+	<!-- JQuery -->
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<!-- Start Screen Container -->
+<div class="container" id="start-container" style="background-color: #f48024; position: relative; top: 100px;	">
+	<div class="row">
+		<div class='col-md-12'>
+			<h1 class="text-center">Trivia Game!</h1>
+		</div>
+		<div class='col-md-12'>
+			<p class="text-center"><button type="button" class="btn btn-default" id="start-button">Click to Start!</button></p>
+		</div>
+	</div>
+</div>
+
+<!-- Main Quiz Container -->
+<div class="container" id="game-container" style="background-color: #f48024; position: relative; top: 100px; display: none">
+
+	<!-- Trivia Game Title -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h1 class="text-center">Trivia Game!</h1>
+		</div>
+	</div>
+
+	<!-- Time Remaining -->
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-center">Time Remaining: <span id=time-remaining></span> Seconds</h2>
+		</div>
+	</div>
+
+	<!-- Question 1 -->
+	<form>
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Which NBA franchise currently holds the most championships?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionOne" class="questionOne" id="inlineRadio1" value="incorrect"> San Antonio Spurs
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionOne" class="questionOne" id="inlineRadio2" value="incorrect"> Los Angeles Lakers
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionOne" class="questionOne" id="inlineRadio3" value="incorrect"> Chicago Bulls
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionOne" class="questionOne" id="inlineRadio4" value="correct"> Boston Celtics
+				</label>
+			</p>
+		</div>
+	</div>
+
+	<!-- Question 2 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who holds the record for most three-pointers made in a single game?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionTwo" class="questionTwo" id="inlineRadio1" value="correct"> Stephen Curry
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionTwo" class="questionTwo" id="inlineRadio2" value="incorrect"> James Harden
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionTwo" class="questionTwo" id="inlineRadio3" value="incorrect"> Kobe Bryant
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionTwo" class="questionTwo" id="inlineRadio4" value="incorrect"> Larry Bird
+				</label>
+			</p>
+		</div>
+	</div>
+
+	<!-- Question 3 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionThree" class="questionThree" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionThree" class="questionThree" id="inlineRadio2" value="incorrect"> Jeff van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionThree" class="questionThree" id="inlineRadio3" value="correct"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionThree" class="questionThree" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+
+		<!-- Question 4 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionFour" class="questionFour" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionFour" class="questionFour" id="inlineRadio2" value="correct"> Mike van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionFour" class="questionFour" id="inlineRadio3" value="incorrect"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionFour" class="questionFour" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+
+		<!-- Question 5Six -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionFive" class="questionThree" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionFive" class="questionThree" id="inlineRadio2" value="incorrect"> Mike van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionFive" class="questionThree" id="inlineRadio3" value="correct"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionFive" class="questionThree" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+
+		<!-- Question 6 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionSix" class="questionThree" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionSix" class="questionThree" id="inlineRadio2" value="incorrect"> Mike van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionSix" class="questionThree" id="inlineRadio3" value="correct"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionSix" class="questionThree" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+
+		<!-- Question 7 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionSeven" class="questionThree" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionSeven" class="questionThree" id="inlineRadio2" value="incorrect"> Mike van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionSeven" class="questionThree" id="inlineRadio3" value="correct"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionSeven" class="questionThree" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+
+		<!-- Question 8 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionEight" class="questionThree" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionEight" class="questionThree" id="inlineRadio2" value="incorrect"> Mike van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionEight" class="questionThree" id="inlineRadio3" value="correct"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionEight" class="questionThree" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+
+		<!-- Question 9 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionNine" class="questionThree" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionNine" class="questionThree" id="inlineRadio2" value="incorrect"> Mike van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionNine" class="questionThree" id="inlineRadio3" value="correct"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionNine" class="questionThree" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+
+		<!-- Question 10 -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h3 class="text-center">Who is the current coach of the Minnesota Timberwolves?</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-center">
+				<label class="radio-inline">
+				  <input type="radio" name="questionTen" class="questionThree" id="inlineRadio1" value="incorrect"> Scott Brooks
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionTen" class="questionThree" id="inlineRadio2" value="incorrect"> Mike van Gundy
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionTen" class="questionThree" id="inlineRadio3" value="correct"> Tom Thibodeau
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="questionTen" class="questionThree" id="inlineRadio4" value="incorrect"> Greg Poppovich
+				</label>
+			</p>
+		</div>
+	</div>
+	
+		<p class="text-center">
+			<button type="submit" class="btn btn-default" id="submit-button">Submit</button>
+		</p>
+	</form>
+</div>
+
+<!-- Score Sheet Container -->
+<div class="container" id="score-container" style="background-color: #f48024; position: relative; top: 100px; display: none">
+
+	<!-- Trivia Game Title -->
+	<div class="row">
+		<div class='col-md-12'>
+			<h1 class="text-center">Trivia Game!</h1>
+		</div>
+	</div>
+
+	<!-- Game Over -->
+	<div class="row">
+		<h2 class="text-center">Game Over!</h2>
+	</div>
+
+	<!-- Game Results -->
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">Correct Answers: <span id="correct-answers-div"></span></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">Incorrect Answers: <span id="incorrect-answers-div"></span></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">Unanswered: <span id="unanswered-div"></span></h3>
+		</div>
+	</div>
+
+</div>
+
+<!-- app.js -->
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ var correctAnswers = 0;
 var incorrectAnswers = 0;
 var unanswered = 0;
 var answerArray = [];
-var counter = 60;
+var counter = 90;
 var audioElement = document.createElement("audio");
 audioElement.setAttribute("src", "assets/nbatheme.mp3");
 

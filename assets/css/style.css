@@ -2,3 +2,42 @@ body {
 	background-image: url("../images/nba.jpg");
 }
 
+.container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#start-container {
+	background-color: #f48024;
+	position: relative;
+	top: 100px;
+	padding-bottom: 80px;
+}
+
+#game-container {
+	background-color: #f48024;
+	position: relative;
+	top: 100px;
+	display: none;
+}
+
+#score-container {
+	background-color: #f48024;
+	position: relative;
+	top: 100px;
+	display: none
+}
+
+#start-button {
+	position: relative;
+	top: 50px;
+	color: black;
+}
+
+#submit-button {
+	color: black;
+}
+
+.odd-row {
+	background-color: #fbbc05;
+}
